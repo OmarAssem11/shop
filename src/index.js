@@ -1,6 +1,7 @@
 const express = require("express");
 const productsRouter = require("./routers/products");
 const cartRouter = require("./routers/cart");
+const ordersRouter = require("./routers/orders");
 
 const server = express();
 
@@ -10,6 +11,7 @@ const port = process.env.port || 3000;
 
 server.use("/products", productsRouter);
 server.use("/cart", cartRouter);
+server.use("/orders", ordersRouter);
 
 server.get("/", (req, res) => {
   res.send("Home Page");
