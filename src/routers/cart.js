@@ -17,4 +17,9 @@ router.get("/:id", (req, res) => {
   else res.status(404).send();
 });
 
+router.delete("/:id", (req, res) => {
+  ds.deleteCartItemById(req.params.id);
+  res.send();
+});
+
 module.exports = router;

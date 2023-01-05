@@ -1,6 +1,6 @@
 const uuidV4 = require("uuid").v4;
 
-const cart = [];
+let cart = [];
 
 const cartDS = {
   addToCart: (cartItem) => {
@@ -11,6 +11,8 @@ const cartDS = {
   },
   fetchCartItems: () => cart,
   fetchCartItemById: (id) => cart.find((cartItem) => cartItem.id == id),
+  deleteCartItemById: (id) =>
+    (cart = cart.filter((cartItem) => cartItem.id != id)),
 };
 
 module.exports = cartDS;
