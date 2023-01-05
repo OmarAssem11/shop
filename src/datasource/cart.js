@@ -14,6 +14,16 @@ const cartDS = {
   deleteCartItemById: (id) =>
     (cart = cart.filter((cartItem) => cartItem.id != id)),
   clearCart: () => (cart = []),
+  updateCartItem: (id, patchCartItem) => {
+    const existingCartItem = cart.find((cartItem) => cartItem.id == id);
+    if (existingCartItem) {
+      const itemIndex = cart.findIndex((cartItem) => cartItem.id == id);
+      const updatedCartItem = { ...existingCartItem, ...patchCartItem };
+      cart[itemIndex] = updatedCartItem;
+      return updatedCartItem;
+    }
+    return undefined;
+  },
 };
 
 module.exports = cartDS;

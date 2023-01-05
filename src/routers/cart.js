@@ -27,4 +27,10 @@ router.delete("/", (req, res) => {
   res.send();
 });
 
+router.patch("/:id", (req, res) => {
+  const updatedCartItem = ds.updateCartItem(req.params.id, req.body);
+  if (updatedCartItem) res.json(updatedCartItem);
+  else res.status(404).send();
+});
+
 module.exports = router;
