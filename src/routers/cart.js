@@ -22,4 +22,9 @@ router.delete("/:id", (req, res) => {
   res.send();
 });
 
+router.delete("/", (req, res) => {
+  ds.clearCart();
+  res.send();
+});
+
 module.exports = router;

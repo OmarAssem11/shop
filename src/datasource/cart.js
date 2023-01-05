@@ -13,6 +13,7 @@ const cartDS = {
   fetchCartItemById: (id) => cart.find((cartItem) => cartItem.id == id),
   deleteCartItemById: (id) =>
     (cart = cart.filter((cartItem) => cartItem.id != id)),
+  clearCart: () => (cart = []),
 };
 
 module.exports = cartDS;
