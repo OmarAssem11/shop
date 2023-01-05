@@ -59,7 +59,7 @@ const shops = [
 ];
 
 const shopsDS = {
-  fetchShops: () => shops,
+  fetchShops: (limit) => shops.slice(0, limit),
 };
 
 module.exports = shopsDS;
