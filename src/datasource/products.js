@@ -134,15 +134,15 @@ const data = [
   },
 ];
 
-const ds = {
-  fetchProducts: () => {
-    return data.map((p) => {
+const productsDS = {
+  fetchProducts: () =>
+    data.map((p) => {
       product = Object.assign({}, p);
       delete product.shops;
       console.log(product);
       return product;
-    });
-  },
+    }),
+  fetchProductsById: (id) => data.find((product) => product.id == id),
 };
 
-module.exports = ds;
+module.exports = productsDS;
