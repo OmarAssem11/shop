@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
   const productId = req.params.id;
   const product = ds.fetchProductsById(productId);
-  if (product != undefined) res.status(200).json(product);
+  if (product) res.status(200).json(product);
   else res.status(404).send();
 });
 

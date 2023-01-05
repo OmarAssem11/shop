@@ -4,6 +4,8 @@ const cartRouter = require("./routers/cart");
 
 const server = express();
 
+server.use(express.json());
+
 const port = process.env.port || 3000;
 
 server.use("/products", productsRouter);
